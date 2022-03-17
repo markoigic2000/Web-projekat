@@ -1,0 +1,166 @@
+[class$="Labela"], [class$="Upis"]{
+    justify-content: space-between;
+}
+[class$="Podaci"],[class$="Prikaz"]{
+    display: flex;
+    justify-content: center;
+}
+[class$="Forma"]{
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+body{
+    display: flex;
+    background-color: gray;
+}
+thead>tr>td{
+    border: solid rgb(29, 4, 121);
+    background-color: rgb(101, 101, 255);
+    border-radius: 50px;
+}
+td{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 300px;
+}
+table{
+    border: 3px solid coral;
+    border-radius: 10px;
+}
+select{
+    background-color: rgba(212, 209, 209, 0.993);
+    border-radius: 50px;
+}
+input{
+    background-color: rgba(212, 209, 209, 0.993);
+    border: none;
+    box-shadow: none;
+    border-radius: 50px;
+}
+h4{
+    margin : 3px 3px 3px 3px;
+}
+div{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+label, input, button {
+    margin: 3px 3px 3px 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.glavniKontejner, .deloviDiv,
+
+.Igraci, .Klubovi, .Turniri, .Mecevi, .Sudije,
+
+.IgracFormaDodaj, .IgracFormaPrikazi,
+
+.KlubFormaDodajKlub, .KlubFormaDodajIgraca, .KlubFormaPrikazi,
+
+.TurnirFormaDodajTurnir, .TurnirFormaDodaj, .TurnirFormaPrikazi,
+
+.MecFormaDodaj, .MecFormaPregledaj,
+
+.SudijaFormaDodaj, .SudijaFormaPromeni,
+
+.IgracFormaDodajPodaciLabela, .IgracFormaDodajPodaciUpis, .IgracFormaPrikaziPodaci,
+
+.KlubFormaDodajKlubPodaciLabela,
+.KlubFormaDodajKlubPodaciUpis,
+.KlubFormaDodajIgracaPodaciLabela,
+.KlubFormaDodajIgracaPodaciUpis,
+.KlubFormaPrikaziPodaciLabela,
+.KlubFormaPrikaziPodaciUpis,
+
+.TurnirFormaDodajTurnirPodaciLabela,
+.TurnirFormaDodajTurnirPodaciUpis,
+.TurnirFormaDodajPodaciLabela,
+.TurnirFormaDodajPodaciUpis,
+.TurnirFormaPrikaziPodaci,
+
+.MecFormaDodajPodaciLabela,
+.MecFormaDodajPodaciUpis,
+.MecFormaPregledajPodaci,
+
+.SudijaFormaDodajPodaciLabela,
+.SudijaFormaDodajPodaciUpis,
+.SudijaFormaPregledajPodaciLabela,
+.SudijaFormaPregledajPodaciUpis,
+.SudijaFormaPromeniPodaciLabela,
+.SudijaFormaPromeniPodaciUpis{
+    display: flex;
+    flex-direction: column;
+}
+.IgracFormaDodajPodaci,
+.KlubFormaDodajKlubPodaci,
+.KlubFormaDodajIgracaPodaci,
+.KlubFormaPrikaziPodaci,
+.KlubFormaPrikaziDugme,
+.TurnirFormaDodajTurnirPodaci,
+.TurnirFormaDodajPodaci,
+.TurnirFormaDodajDugmici,
+.MecFormaDodajPodaci,
+.SudijaFormaDodajPodaci,
+.SudijaFormaPregledajPodaci,
+.SudijaFormaPromeniPodaci{
+    display: flex;
+    flex-direction: row;
+}
+.Igraci, .Klubovi, .Turniri, .Mecevi, .Sudije{
+    flex-wrap: wrap;
+    border: 2px solid black;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+    background-color: cornflowerblue;
+}
+
+.glavniKontejner{
+    width: 100%;
+    height: auto;
+}
+.pocetniDiv, .deloviDiv{
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+}
+[class$="Forma"]{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+}
+.Dugme{
+    border: 2px solid black;
+    background-color :coral;
+    border-radius: 50px;
+}
+.Dugme:hover{
+    background-color: rgb(182, 168, 233);
+    transition: 0.3s;
+}
+.pocetniDiv{
+    align-self: center;
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace;
+}
+.IgracFormaDodajDugme, .IgracFormaPrikaziDugme,
+.KlubFormaDodajKlubDugme, .KlubFormaDodajIgracaDugme, .KlubFormaPrikaziDugme,
+.TurnirFormaDodajTurnirDugme,  .TurnirFormaDodajDugmici, .TurnirFormaPrikaziDugme,
+.MecFormaDodajDugme, .MecFormaPregledajDugme,
+.SudijaFormaDodajDugme, .SudijaFormaPregledajDugme, .SudijaFormaPromeniDugme{
+    display: flex;
+    justify-content: center;
+    align-content:center ;
+}
+.IgracNaziv, .KlubNaziv, .TurnirNaziv, .MecNaziv, .SudijaNaziv{
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight :bold;
+    text-decoration: underline rgb(29, 4, 121);
+}
+
+
+
+
