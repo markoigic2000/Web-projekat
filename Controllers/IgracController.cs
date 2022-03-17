@@ -44,45 +44,30 @@ namespace _17640Projekat.Controllers
             }
             try
             {
-                var i = new Igrac();
-                i.brojRegistracije = regIgraca;
-                i.Ime = ime;
-                i.Prezime = prezime;
-                i.Mail = mejl;
-                i.datumRodjenja = datumRodjenja;
+                var igrac = Context.Igraci.Where(i => i.brojRegistracije==regIgraca).FirstOrDefault();
+                if(igrac!=null)
+                {
+                    return BadRequest("Vec postoji igrac sa unetim registarskim brojem");
+                }
+                else
+                {
+                    var i = new Igrac();
+                    i.brojRegistracije = regIgraca;
+                    i.Ime = ime;
+                    i.Prezime = prezime;
+                    i.Mail = mejl;
+                    i.datumRodjenja = datumRodjenja;
 
-                Context.Igraci.Add(i);
-                await Context.SaveChangesAsync();
-                return Ok($"Igrac {i.Ime} {i.Prezime} je dodat " );
+                    Context.Igraci.Add(i);
+                    await Context.SaveChangesAsync();
+                    return Ok($"Igrac {i.Ime} {i.Prezime} je dodat " );
+                }
             }
             catch(Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
-        /*[Route("ObrisiIgraca/{brojReg}")]
-        [HttpDelete]
-        public async Task<ActionResult> ObrisiIgraca(int brojReg)
-        {
-            try
-            {
-                var igrac = Context.Igraci.Where(i => i.brojRegistracije==brojReg).FirstOrDefault();
-                if(igrac==null)
-                {
-                    return BadRequest("Ne postoji igrac sa unetim brojem registracije");
-                }
-                else
-                {
-                    Context.Igraci.Remove(igrac);
-                    await Context.SaveChangesAsync();
-                    return Ok("Uspeno obrisan igrac");
-                }
-            }
-            catch(Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }*/
         [EnableCors("CORS")]
         [Route("PrikazPoBrojuBodova/{brojbodova}")]
         [HttpGet]

@@ -1,9 +1,9 @@
 import { Igrac } from "./Igrac.js";
-import { IgracTurniriPrikaz } from "./IgracTurniriPrikaz.js";
+/*import { IgracTurniriPrikaz } from "./IgracTurniriPrikaz.js";*/
 import { Klub } from "./Klub.js";
 import { Mec } from "./Mec.js";
 import { Turnir } from "./Turnir.js";
-import { KlubClan } from "./KlubClan.js"; //?????????
+/*import { KlubClan } from "./KlubClan.js";*/ //?????????
 export class Pikado{
 
     constructor(naziv){
@@ -626,6 +626,7 @@ export class Pikado{
         
 
     }
+    //-------------------------------------------------Prikaz info o klubu
     prikaziInfoOKlubu(klub){
         if(klub==="" || klub===null){
             alert("Unesite ime");
@@ -768,6 +769,7 @@ export class Pikado{
         let datum =document.querySelector(".TurnirFormaDodajTurnirDatum");
         dete.onclick=(ev)=>this.dodajTurnir(naziv.value,grad.value,bodovi.value,fond.value,datum.value);
     }
+    //--------------------------------------------------------------Dodaj TURNIR
     dodajTurnir(naziv,grad,bodovi,fond,datum){
         if(naziv==="" || naziv===null){
             alert("Unesite naziv");
@@ -857,6 +859,7 @@ export class Pikado{
         d1.onclick=(ev)=>this.dodajOrganizatora(ime.value,klub.value);
         d2.onclick=(ev)=>this.dodajPobednika(ime.value,id.value);
     }
+    //-------------------------------------------------------------Dodaj organizatora TURNIRa
     dodajOrganizatora(ime,klub){
         if(ime===null || ime===""){
             alert("Unesite ime");
@@ -875,6 +878,7 @@ export class Pikado{
             }
         })
     }
+    //-------------------------------------------------------------Dodaj pobednika TURNIRa
     dodajPobednika(ime,id){
         if(ime===null || ime===""){
             alert("Unesite ime");
@@ -937,6 +941,7 @@ export class Pikado{
 
         dugme.onclick=(ev)=>this.prikaziTurnire(vrednost.value);
     }
+    //------------------------------------------------------------Prikazi TURNIRe
     prikaziTurnire(vrednost){
         let kriterijum = document.querySelector('input[name="Kriterijum"]:checked').value;
         if(vrednost===null || vrednost===""){
@@ -1132,6 +1137,7 @@ export class Pikado{
 
         dete.onclick=(ev)=>this.dodajMec(turnir.value,sudija.value,igrac1.value,igrac2.value);
     }
+    //-------------------------------------------------------------Dodaj MEC
     dodajMec(turnir,sudija,igrac1,igrac2){
         let kriterijum = document.querySelector('input[name="Kategorija"]:checked').value; // 0-301 1-501
         let b = document.querySelector(".Faza");
@@ -1226,6 +1232,7 @@ export class Pikado{
 
         dete.onclick=(ev)=>this.pregledajMeceve();
     }
+    //------------------------------------------------------------Pregleda MECeve
     pregledajMeceve(){
         let faza = document.querySelector('input[name="Faza"]:checked').value;// 0-cetvrtfinale 1-polufinale 2-finale
         let kategorija = document.querySelector('input[name="Kateogrija"]:checked').value; // 0-301 1-501
@@ -1375,6 +1382,7 @@ export class Pikado{
         dete.onclick=(ev)=>this.dodajSudiju(licenca.value,ime.value,prezime.value,mail.value);
 
     }
+    //-------------------------------------------------------Dodaj SUDIJU
     dodajSudiju(licenca,ime,prezime,mail){
         if(licenca===null || licenca===""){
             alert("Unesite broj licence");
@@ -1456,6 +1464,7 @@ export class Pikado{
         d1.onclick=(ev)=>this.promeniSudiju(id.value,mail.value);
         d2.onclick=(ev)=>this.obrisiSudiju(id.value);
     }
+    //--------------------------------------------------------Promeni SUDIJU
     promeniSudiju(id,mail){
         if(id===null || id===""){
             alert("Unesite broj licence sudije");
@@ -1474,6 +1483,7 @@ export class Pikado{
             }
         })
     }
+    //--------------------------------------------------------Obrisi SUDIJU
     obrisiSudiju(licenca){
         if(licenca===null || licenca===""){
             alert("Unesite broj licence");

@@ -43,14 +43,23 @@ namespace _17640Projekat.Controllers
             }
             try
             {
-                var sudija = new Sudija();
-                sudija.brojLicence = brojLicence;
-                sudija.Ime = ime;
-                sudija.Prezime = prezime;
-                sudija.Mejl = mejl;
-                Context.Sudije.Add(sudija);
-                await Context.SaveChangesAsync();
-                return Ok($"Sudija {sudija.Ime} {sudija.Prezime} uspesno dodat");
+                var sud = Context.Sudije.Where(s => s.brojLicence==brojLicence).FirstOrDefault();
+                if(sud!=null)
+                {
+                    return BadRequest("Vec postoji sudija sa unetim brojem licence");
+
+                }
+                else
+                {
+                    var sudija = new Sudija();
+                    sudija.brojLicence = brojLicence;
+                    sudija.Ime = ime;
+                    sudija.Prezime = prezime;
+                    sudija.Mejl = mejl;
+                    Context.Sudije.Add(sudija);
+                    await Context.SaveChangesAsync();
+                    return Ok($"Sudija {sudija.Ime} {sudija.Prezime} uspesno dodat");
+                }
             }
             catch(Exception e)
             {

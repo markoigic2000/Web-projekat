@@ -130,26 +130,5 @@ namespace _17640Projekat.Controllers
                 return BadRequest(e.Message);
             }
         }
-        /*[Route("ObrisiKlub/{ime}")]
-        [HttpDelete]
-        public async Task<ActionResult> ObrisiKlub(String ime)
-        {
-            if(string.IsNullOrWhiteSpace(ime) || ime.Length>50)
-            {
-                return BadRequest("Nevalidno uneto ime kluba");
-            }
-            try
-            {
-                var klub = Context.Klubovi.Where(k => k.Ime==ime);
-
-                Context.Remove(klub);
-                await Context.SaveChangesAsync();
-                return Ok("Klub uspesno obrisan");
-            }
-            catch(Exception e)
-            {
-                return BadRequest(e);
-            }
-        }*/
     }
 }
