@@ -1,9 +1,8 @@
 import { Igrac } from "./Igrac.js";
-/*import { IgracTurniriPrikaz } from "./IgracTurniriPrikaz.js";*/
 import { Klub } from "./Klub.js";
 import { Mec } from "./Mec.js";
 import { Turnir } from "./Turnir.js";
-/*import { KlubClan } from "./KlubClan.js";*/ //?????????
+
 export class Pikado{
 
     constructor(naziv){
